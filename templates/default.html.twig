@@ -1,0 +1,15 @@
+{# templates/default.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}My cool symfony project{% endblock %}
+
+{% block body %}
+	{% for label, messages in app.flashes %}
+    		{% for message in messages %}
+        		<div class="flash-{{ label }}">
+           			{{ message }}
+		        </div>
+		{% endfor %}
+	{% endfor %}
+	<div class="test">Nerdwolf random number: {{ test }}</div>
+{% endblock %}
