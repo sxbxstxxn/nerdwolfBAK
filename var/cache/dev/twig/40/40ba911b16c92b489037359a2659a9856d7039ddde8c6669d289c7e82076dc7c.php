@@ -41,16 +41,17 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 19
-        echo "    </head>
+        // line 9
+        echo "         
+    </head>
     <body>
         ";
-        // line 21
+        // line 12
         $this->displayBlock('body', $context, $blocks);
-        // line 22
+        // line 13
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 23
+        // line 14
         echo "    </body>
     <footer> 
       <p>&copy; Sebastian Christoph</p>
@@ -94,17 +95,8 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 7
-        echo "          <link href=\"https://fonts.googleapis.com/css?family=Skranji\" rel=\"stylesheet\">
-          <style>
-            body {
-              background-color: #222629;
-              color: #86C232;
-            }
-            .test {
-              font-family: 'Skranji';
-              font-size: 25px;
-            }
-          </style>
+        echo "            <link href=\"https://fonts.googleapis.com/css?family=Skranji\" rel=\"stylesheet\">
+            <link href=\"/build/css/app.css\" rel=\"stylesheet\" />            
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -114,7 +106,7 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
 
     }
 
-    // line 21
+    // line 12
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -131,7 +123,7 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
 
     }
 
-    // line 22
+    // line 13
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -155,7 +147,7 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
 
     public function getDebugInfo()
     {
-        return array (  135 => 22,  118 => 21,  97 => 7,  88 => 6,  70 => 5,  54 => 23,  51 => 22,  49 => 21,  45 => 19,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  127 => 13,  110 => 12,  98 => 7,  89 => 6,  71 => 5,  55 => 14,  52 => 13,  50 => 12,  45 => 9,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -166,18 +158,9 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>       
         {% block stylesheets %}
-          <link href=\"https://fonts.googleapis.com/css?family=Skranji\" rel=\"stylesheet\">
-          <style>
-            body {
-              background-color: #222629;
-              color: #86C232;
-            }
-            .test {
-              font-family: 'Skranji';
-              font-size: 25px;
-            }
-          </style>
-        {% endblock %}
+            <link href=\"https://fonts.googleapis.com/css?family=Skranji\" rel=\"stylesheet\">
+            <link href=\"/build/css/app.css\" rel=\"stylesheet\" />            
+        {% endblock %}         
     </head>
     <body>
         {% block body %}{% endblock %}

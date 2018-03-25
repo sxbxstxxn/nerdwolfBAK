@@ -168,7 +168,6 @@ Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPas
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "sensio_framework_extra.security.listener" previously pointing to "monolog.logger" to "logger".
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "web_profiler.controller.profiler" previously pointing to "router.default" to "router".
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "web_profiler.controller.router" previously pointing to "router.default" to "router".
-Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "web_profiler.debug_toolbar" previously pointing to "router.default" to "router".
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "twig" previously pointing to "twig.loader.native_filesystem" to "twig.loader".
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "twig.extension.trans" previously pointing to "translator.data_collector" to "translator".
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service "twig.extension.routing" previously pointing to "router.default" to "router".
@@ -368,6 +367,7 @@ Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inl
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "sensio_framework_extra.converter.doctrine.orm.expression_language.default" to "sensio_framework_extra.converter.doctrine.orm".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "sensio_framework_extra.view.guesser" to "sensio_framework_extra.view.listener".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "sensio_framework_extra.security.expression_language.default" to "sensio_framework_extra.security.listener".
+Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "web_profiler.csp.handler" to "web_profiler.controller.profiler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "1_NonceGenerator~dn4.wlz" to "web_profiler.csp.handler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "2_HtmlDumper~dn4.wlz" to "twig.extension.webprofiler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "twig.extension.logout_url" to "twig".
@@ -551,6 +551,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "sensio_framework_extra.security.expression_language.default"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "2_HtmlDumper~dn4.wlz"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "1_NonceGenerator~dn4.wlz"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "web_profiler.csp.handler"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "twig.extension.webprofiler"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "twig.app_variable"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "twig.template_iterator"; reason: unused.

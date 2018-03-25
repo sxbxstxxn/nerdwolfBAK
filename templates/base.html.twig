@@ -4,18 +4,9 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>       
         {% block stylesheets %}
-          <link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
-          <style>
-            body {
-              background-color: #222629;
-              color: #86C232;
-            }
-            .test {
-              font-family: 'Skranji';
-              font-size: 25px;
-            }
-          </style>
-        {% endblock %}
+            <link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
+            <link href="/build/css/app.css" rel="stylesheet" />            
+        {% endblock %}         
     </head>
     <body>
         {% block body %}{% endblock %}

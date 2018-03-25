@@ -101,7 +101,7 @@ final class Versions
   'symfony/web-profiler-bundle' => 'v3.4.6@355591d4749c9bbc03036e264886a9b8bdd1f45f',
   'symfony/web-server-bundle' => 'v3.4.6@44a6b2deb1c58b2dfd3592139db9091d7cfce8ed',
   'twig/twig' => 'v2.4.7@69aacd44dbbaa3199d5afb68605c996d577896fc',
-  'symfony/website-skeleton' => 'v3.4.5@',
+  '__root__' => 'dev-master@718fa7d6afea68172be8c3f55f768185834e2289',
 );
 
     private function __construct()
