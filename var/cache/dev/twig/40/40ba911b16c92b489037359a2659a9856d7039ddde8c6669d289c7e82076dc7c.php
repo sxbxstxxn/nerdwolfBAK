@@ -52,6 +52,9 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
         $this->displayBlock('javascripts', $context, $blocks);
         // line 23
         echo "    </body>
+    <footer> 
+      <p>&copy; Sebastian Christoph</p>
+    </footer>
 </html>
 
 ";
@@ -152,7 +155,7 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
 
     public function getDebugInfo()
     {
-        return array (  132 => 22,  115 => 21,  94 => 7,  85 => 6,  67 => 5,  54 => 23,  51 => 22,  49 => 21,  45 => 19,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  135 => 22,  118 => 21,  97 => 7,  88 => 6,  70 => 5,  54 => 23,  51 => 22,  49 => 21,  45 => 19,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -180,6 +183,9 @@ class __TwigTemplate_9b39edad9e21b92b3f5c82ccbe9cb38271fdd5e0b7948298cbb39ebeb9e
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
+    <footer> 
+      <p>&copy; Sebastian Christoph</p>
+    </footer>
 </html>
 
 ", "base.html.twig", "/var/www/vhosts/nerdwolf.eu/httpdocs/nerdwolf/templates/base.html.twig");
