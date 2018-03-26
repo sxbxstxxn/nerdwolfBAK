@@ -657,7 +657,6 @@ return array(
     'var_dumper.html_dumper' => true,
     'web_link.add_link_header_listener' => true,
     'web_profiler.csp.handler' => true,
-    'web_profiler.debug_toolbar' => true,
     'web_server.command.server_log' => true,
     'web_server.command.server_run' => true,
     'web_server.command.server_start' => true,

@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerVjlikoz;
+namespace ContainerFjhzkwu;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -121,8 +121,6 @@ class srcDevDebugProjectContainer extends Container
             'validator.builder' => 'getValidator_BuilderService',
             'var_dumper.cloner' => 'getVarDumper_ClonerService',
             'web_link.add_link_header_listener' => 'getWebLink_AddLinkHeaderListenerService',
-            'web_profiler.csp.handler' => 'getWebProfiler_Csp_HandlerService',
-            'web_profiler.debug_toolbar' => 'getWebProfiler_DebugToolbarService',
         );
         $this->fileMap = array(
             'App\\Controller\\DefaultController' => __DIR__.'/getDefaultControllerService.php',
@@ -644,8 +642,6 @@ class srcDevDebugProjectContainer extends Container
             'validator.mapping.cache_warmer' => true,
             'var_dumper.cli_dumper' => true,
             'web_link.add_link_header_listener' => true,
-            'web_profiler.csp.handler' => true,
-            'web_profiler.debug_toolbar' => true,
             'web_server.command.server_log' => true,
             'web_server.command.server_run' => true,
             'web_server.command.server_start' => true,
@@ -838,9 +834,6 @@ class srcDevDebugProjectContainer extends Container
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/EventListener/SecurityListener.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/EventListener/IsGrantedListener.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/Request/ArgumentNameConverter.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/web-profiler-bundle/Csp/NonceGenerator.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/web-profiler-bundle/Csp/ContentSecurityPolicyHandler.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/web-profiler-bundle/EventListener/WebDebugToolbarListener.php';
             include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/ExtensionInterface.php';
             include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Extension.php';
             include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/LogoutUrlExtension.php';
@@ -962,7 +955,7 @@ class srcDevDebugProjectContainer extends Container
      */
     protected function getDataCollector_DumpService()
     {
-        return $this->services['data_collector.dump'] = new \Symfony\Component\HttpKernel\DataCollector\DumpDataCollector(${($_ = isset($this->services['debug.stopwatch']) ? $this->services['debug.stopwatch'] : $this->services['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true)) && false ?: '_'}, ${($_ = isset($this->services['debug.file_link_formatter']) ? $this->services['debug.file_link_formatter'] : $this->getDebug_FileLinkFormatterService()) && false ?: '_'}, 'UTF-8', ${($_ = isset($this->services['request_stack']) ? $this->services['request_stack'] : $this->services['request_stack'] = new \Symfony\Component\HttpFoundation\RequestStack()) && false ?: '_'}, NULL);
+        return $this->services['data_collector.dump'] = new \Symfony\Component\HttpKernel\DataCollector\DumpDataCollector(${($_ = isset($this->services['debug.stopwatch']) ? $this->services['debug.stopwatch'] : $this->services['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true)) && false ?: '_'}, ${($_ = isset($this->services['debug.file_link_formatter']) ? $this->services['debug.file_link_formatter'] : $this->getDebug_FileLinkFormatterService()) && false ?: '_'}, 'UTF-8', NULL, NULL);
     }
 
     /**
@@ -1502,9 +1495,6 @@ class srcDevDebugProjectContainer extends Container
         $instance->addListener('kernel.controller_arguments', array(0 => function () {
             return ${($_ = isset($this->services['framework_extra_bundle.event.is_granted']) ? $this->services['framework_extra_bundle.event.is_granted'] : $this->getFrameworkExtraBundle_Event_IsGrantedService()) && false ?: '_'};
         }, 1 => 'onKernelControllerArguments'), 0);
-        $instance->addListener('kernel.response', array(0 => function () {
-            return ${($_ = isset($this->services['web_profiler.debug_toolbar']) ? $this->services['web_profiler.debug_toolbar'] : $this->getWebProfiler_DebugToolbarService()) && false ?: '_'};
-        }, 1 => 'onKernelResponse'), -128);
         $instance->addListener('kernel.exception', array(0 => function () {
             return ${($_ = isset($this->services['twig.exception_listener']) ? $this->services['twig.exception_listener'] : $this->load(__DIR__.'/getTwig_ExceptionListenerService.php')) && false ?: '_'};
         }, 1 => 'onKernelException'), -128);
@@ -2132,26 +2122,6 @@ class srcDevDebugProjectContainer extends Container
         return $this->services['web_link.add_link_header_listener'] = new \Symfony\Component\WebLink\EventListener\AddLinkHeaderListener();
     }
 
-    /**
-     * Gets the private 'web_profiler.csp.handler' shared service.
-     *
-     * @return \Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler
-     */
-    protected function getWebProfiler_Csp_HandlerService()
-    {
-        return $this->services['web_profiler.csp.handler'] = new \Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler(new \Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator());
-    }
-
-    /**
-     * Gets the private 'web_profiler.debug_toolbar' shared service.
-     *
-     * @return \Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener
-     */
-    protected function getWebProfiler_DebugToolbarService()
-    {
-        return $this->services['web_profiler.debug_toolbar'] = new \Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener(${($_ = isset($this->services['twig']) ? $this->services['twig'] : $this->getTwigService()) && false ?: '_'}, false, 2, 'bottom', ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->getRouterService()) && false ?: '_'}, '^/((index|app(_[\\w]+)?)\\.php/)?_wdt', ${($_ = isset($this->services['web_profiler.csp.handler']) ? $this->services['web_profiler.csp.handler'] : $this->getWebProfiler_Csp_HandlerService()) && false ?: '_'});
-    }
-
     public function getParameter($name)
     {
         $name = (string) $name;
@@ -2576,8 +2546,6 @@ class srcDevDebugProjectContainer extends Container
                 ),
             ),
             'web_profiler.debug_toolbar.position' => 'bottom',
-            'web_profiler.debug_toolbar.intercept_redirects' => false,
-            'web_profiler.debug_toolbar.mode' => 2,
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
                 0 => 'form_div_layout.html.twig',
