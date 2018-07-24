@@ -1,0 +1,12 @@
+Cache löschen:
+php bin/console cache:clear --no-warmup --env=dev
+
+scss kompilieren:
+./node_modules/.bin/encore dev
+oder
+yarn run encore dev
+
+scss files beobachten und bei änderung neu kompilieren (wenn ich mit IDE arbeite)
+./node_modules/.bin/encore dev --watch
+oder
+yarn run encore dev --watch
