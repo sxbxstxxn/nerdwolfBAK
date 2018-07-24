@@ -1,2 +1,4 @@
-/var/
-var/
+# Cache, session files and logs (Symfony3)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
