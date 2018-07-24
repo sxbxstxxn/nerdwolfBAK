@@ -1,7 +1,7 @@
 {# templates/default.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}My cool symfony project{% endblock %}
+{% block title %}Nerdwolf{% endblock %}
 
 {% block body %}
 	{% for label, messages in app.flashes %}
@@ -11,5 +11,6 @@
 		        </div>
 		{% endfor %}
 	{% endfor %}
+	<div class="logo"><img src="/build/images/nerdwolf_grey_178x178.png"/></div>
 	<div class="test">Nerdwolf random number: {{ test }}</div>
 {% endblock %}
